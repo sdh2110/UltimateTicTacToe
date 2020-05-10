@@ -1,5 +1,8 @@
 package Model.Board;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import Controller.GameMoves.MoveData;
 
 /**
@@ -37,5 +40,21 @@ public abstract class GameBoard implements BoardComponent {
                 spaces[i][j] = componentType.createNewComponent();
             }
         }
+    }
+
+    /**
+     * Creates an iterator for iterator for iterating through the components
+     * that make up this GameBoard.
+     * 
+     * @return an iterator for the board
+     */
+    public Iterator<BoardComponent> getComponentIterator() {
+        ArrayList<BoardComponent> components = new ArrayList<>();
+        for (int y = 0; y < spaces.length; y++) {
+            for (int x = 0; x < spaces.length; x++) {
+                components.add(spaces[x][y]);
+            }
+        }
+        return components.iterator();
     }
 }

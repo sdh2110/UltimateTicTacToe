@@ -54,4 +54,13 @@ public class Space implements BoardComponent {
     public void acceptVisitor(BoardVisitor visitor) {
         visitor.visit(this);
     }
+
+    /**
+     * Gets the occupant of this space.
+     * 
+     * @return the occupant
+     */
+    public PieceType getOccupant() {
+        return occupant;
+    }
 }
