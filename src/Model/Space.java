@@ -7,20 +7,38 @@ import Controller.GameMoves.MoveData;
  * 
  * @author Steven Hulbert
  */
-public interface Space {
+public class Space implements BoardComponent {
+
+    // The occupant off this space
+    private PieceType occupant;
+
+    public Space() {
+        occupant = PieceType.EMPTY;
+    }
 
     /**
-     * Creates a new space of this space's type.
+     * Creates a new Space.
      * 
-     * @return a new space.
+     * @return a new Space
      */
-    public Space createNewSpace();
-    
+    @Override
+    public BoardComponent createNewComponent() {
+        return new Space();
+    }
+
     /**
-     * Attempts a given move on this space.
+     * Attempts the given move on this space.
      * 
-     * @param move - The move being attempted
+     * @param move - The information for the move that is being attempted
      * @return whether or not the move was a valid move
      */
-    public boolean attemptMove(MoveData move);
+    @Override
+	public boolean attemptMove(MoveData move) {
+        if (occupant != PieceType.EMPTY ||
+            move.getPlacementType() == PieceType.EMPTY) {
+                return false;
+        }
+        occupant = move.getPlacementType();
+		return true;
+    }
 }

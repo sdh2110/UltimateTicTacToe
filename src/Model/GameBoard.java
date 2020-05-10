@@ -7,10 +7,10 @@ import Controller.GameMoves.MoveData;
  * 
  * @author Steven Hulbert
  */
-public abstract class GameBoard {
+public abstract class GameBoard implements BoardComponent {
     
     // The spaces that make up the board
-    private Space[][] spaces;
+    private BoardComponent[][] spaces;
 
     /**
      * Attempts the given move on this board.
@@ -18,22 +18,23 @@ public abstract class GameBoard {
      * @param move - The information for the move that is being attempted
      * @return whether or not the move was a valid move
      */
+    @Override
     public boolean attemptMove(MoveData move) {
-        return spaces[move.getXCoordinate()][move.getYCoordinate()].attemptMove(move);
+        return spaces[move.getXCoordinate()][move.getYCoordinate()].attemptMove(move.getNextData());
     }
 
     /**
      * Initializes the data for this board to be set up for a new game.
      * 
-     * @param spaceType - The type of space to fill this board with
+     * @param componentType - The type of component to fill this board with
      * @param width - The width of the board to be created
      * @param height - The heigt of the board to be created
      */
-    protected void initializeBoard(Space spaceType, int width, int height) {
-        spaces = new Space[width][height];
+    protected void initializeBoard(BoardComponent componentType, int width, int height) {
+        spaces = new BoardComponent[width][height];
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                spaces[i][j] = spaceType.createNewSpace();
+                spaces[i][j] = componentType.createNewComponent();
             }
         }
     }
