@@ -1,14 +1,28 @@
 package View;
 
+import Model.Board.GameBoard;
+
 /**
- * An interface for all UIs used by Tic-Tac-Toe games.
+ * An abstract class for all UIs used by Tic-Tac-Toe games.
  * 
  * @author Steven Hulbert
  */
-public interface UserInterface {
+public abstract class UserInterface {
+
+    // The board that this UI will display
+    private GameBoard subjectBoard;
     
+    /**
+     * Attachs a game board to this UserInterface for the interface to display.
+     * 
+     * @param board - The board to attach
+     */
+    public void attachBoard(GameBoard subjectBoard) {
+        this.subjectBoard = subjectBoard;
+    }
+
     /**
      * Updates the user interface.
      */
-    public void update();
+    public abstract void update();
 }
