@@ -1,7 +1,5 @@
 package View;
 
-import Model.Board.TicTacToeBoard;
-
 /**
  * A Plain Text User Interface (PTUI) for Tic-Tac-Toe.
  * 
