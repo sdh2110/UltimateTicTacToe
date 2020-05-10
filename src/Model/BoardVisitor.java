@@ -22,5 +22,5 @@ public interface BoardVisitor {
      * 
      * @param space - The GameBoard to visit
      */
-    public void visit(GameBoard gameBoard);
+    public void visit(TicTacToeBoard ticTacToeBoard);
 }

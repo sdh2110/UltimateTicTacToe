@@ -1,5 +1,7 @@
 package Model.Board;
 
+import Model.BoardVisitor;
+
 /**
  * Represents a Tic-Tic-Toe board for a game of Tic-Tac-Toe.
  * 
@@ -27,6 +29,16 @@ public class TicTacToeBoard extends GameBoard {
     @Override
     public BoardComponent createNewComponent() {
         return new TicTacToeBoard();
+    }
+
+    /**
+     * Accepts a visit from a BoardVisitor.
+     * 
+     * @param visitor - The visitor that is visiting this component
+     */
+    @Override
+    public void acceptVisitor(BoardVisitor visitor) {
+        visitor.visit(this);
     }
     
 }
