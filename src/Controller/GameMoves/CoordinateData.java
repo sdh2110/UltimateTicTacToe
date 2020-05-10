@@ -1,6 +1,6 @@
 package Controller.GameMoves;
 
-import Model.PieceType;
+import Model.Board.PieceType;
 
 /**
  * A data packet that represents the coordinates of the move being made. It

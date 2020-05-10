@@ -1,6 +1,6 @@
 package Controller.GameMoves;
 
-import Model.PieceType;
+import Model.Board.PieceType;
 
 /**
  * A packet containing the information for a move made in a Tic-Tac-Toe game.

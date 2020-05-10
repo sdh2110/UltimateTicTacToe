@@ -1,4 +1,4 @@
-package Model;
+package Model.Board;
 
 import Controller.GameMoves.MoveData;
 

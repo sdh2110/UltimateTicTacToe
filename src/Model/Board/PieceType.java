@@ -1,4 +1,4 @@
-package Model;
+package Model.Board;
 
 /**
  * The type of piece that occupies a space.

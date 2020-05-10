@@ -1,6 +1,6 @@
 package Controller.GameMoves;
 
-import Model.PieceType;
+import Model.Board.PieceType;
 
 /**
  * A data packet that specifies the type of piece to be placed with this move.

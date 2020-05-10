@@ -1,4 +1,4 @@
-package Model;
+package Model.Board;
 
 /**
  * Represents a Tic-Tic-Toe board for a game of Tic-Tac-Toe.
