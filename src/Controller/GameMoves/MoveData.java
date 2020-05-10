@@ -28,7 +28,7 @@ public interface MoveData {
      * 
      * @return the piece type
      */
-    public PieceType getPieceType();
+    public PieceType getPlacementType();
 
     /**
      * Get the inner bit of data stored in this GameMove containing the next
