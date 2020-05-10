@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.GameMove;
+import Controller.GameMoves.GameMove;
 
 /**
  * Represents a board for a nonspecific Tic-Tac-Toe game.

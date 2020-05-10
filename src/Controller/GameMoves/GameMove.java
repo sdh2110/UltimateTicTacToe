@@ -1,7 +1,6 @@
-package Controller;
+package Controller.GameMoves;
 
 import Model.PieceType;
-import Model.Space;
 
 /**
  * A packet containing the information for a move made in a Tic-Tac-Toe game.

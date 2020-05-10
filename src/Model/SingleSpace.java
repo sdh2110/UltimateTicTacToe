@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.GameMove;
+import Controller.GameMoves.GameMove;
 
 public class SingleSpace implements Space {
 
