@@ -8,6 +8,8 @@ import Controller.GameMoves.MoveData;
  * @author Steven Hulbert
  */
 public class Space implements BoardComponent {
+    // A Space object used for the createNewComponent factory method
+    public static final Space FOR_FACTORY = new Space();
 
     // The occupant off this space
     private PieceType occupant;
