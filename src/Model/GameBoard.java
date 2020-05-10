@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.GameMoves.GameMove;
+import Controller.GameMoves.MoveData;
 
 /**
  * Represents a board for a nonspecific Tic-Tac-Toe game.
@@ -18,7 +18,7 @@ public abstract class GameBoard {
      * @param move - The information for the move that is being attempted
      * @return whether or not the move was a valid move
      */
-    public boolean attemptMove(GameMove move) {
+    public boolean attemptMove(MoveData move) {
         return spaces[move.getXCoordinate()][move.getYCoordinate()].attemptMove(move);
     }
 

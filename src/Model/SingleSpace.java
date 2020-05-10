@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.GameMoves.GameMove;
+import Controller.GameMoves.MoveData;
 
 public class SingleSpace implements Space {
 
@@ -28,7 +28,7 @@ public class SingleSpace implements Space {
      * @return whether or not the move was a valid move
      */
     @Override
-    public boolean attemptMove(GameMove move) {
+    public boolean attemptMove(MoveData move) {
         if (occupant == PieceType.EMPTY) {
             
         }

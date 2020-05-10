@@ -7,7 +7,7 @@ import Model.PieceType;
  * 
  * @author Steven Hulbert
  */
-public interface GameMove {
+public interface MoveData {
 
     /**
      * Gets the x-coordinate at which this move is being attempted.
@@ -36,5 +36,5 @@ public interface GameMove {
      * 
      * @return gets the next packet of data for this move
      */
-    public GameMove getNextData();
+    public MoveData getNextData();
  }

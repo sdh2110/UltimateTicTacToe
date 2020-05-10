@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.GameMoves.GameMove;
+import Controller.GameMoves.MoveData;
 
 /**
  * An interface for spaces on a GameBoard.
@@ -22,5 +22,5 @@ public interface Space {
      * @param move - The move being attempted
      * @return whether or not the move was a valid move
      */
-    public boolean attemptMove(GameMove move);
+    public boolean attemptMove(MoveData move);
 }
