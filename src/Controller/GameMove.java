@@ -23,7 +23,6 @@ public interface GameMove {
      * @return the t-coordinate
      */
     public int getYCoordinate();
-    }
     
     /**
      * Gets the type of piece to place with this move.
