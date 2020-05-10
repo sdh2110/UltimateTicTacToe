@@ -14,6 +14,7 @@ import Model.Board.TicTacToeBoard;
  */
 public class BuildPTVisitor implements BoardVisitor {
 
+    // Char representation of board spaces
     private static final char EMPTY_C = '.';
     private static final char X_PIECE_C = 'X';
     private static final char O_PIECE_C = 'O';
@@ -70,7 +71,7 @@ public class BuildPTVisitor implements BoardVisitor {
         int spacing = (int)Math.sqrt(boardString.length());
 
         for (int i = boardString.length() - spacing; i > 0; i -= spacing) {
-            boardString.insert(spacing, '\n');
+            boardString.insert(i, '\n');
         }
 
         return boardString.toString();

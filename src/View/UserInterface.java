@@ -22,6 +22,15 @@ public abstract class UserInterface {
     }
 
     /**
+     * Gets the suject board of this UI.
+     * 
+     * @return the subject board
+     */
+    protected GameBoard getSubject() {
+        return subjectBoard;
+    }
+
+    /**
      * Updates the user interface.
      */
     public abstract void update();
