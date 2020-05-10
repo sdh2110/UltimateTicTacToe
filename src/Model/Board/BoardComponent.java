@@ -1,6 +1,7 @@
 package Model.Board;
 
 import Controller.GameMoves.MoveData;
+import Model.BoardVisitor;
 
 /**
  * An interface for the components that make up a Tic-Tac-Toe board.
@@ -24,4 +25,13 @@ public interface BoardComponent {
      */
     public boolean attemptMove(MoveData move);
     
+    /**
+     * Accepts a visit from a BoardVisitor.
+     * 
+     * Always implemented as follows:
+     *      visitor.visit(this);
+     * 
+     * @param visitor - The visitor that is visiting this component
+     */
+    public void acceptVisitor(BoardVisitor visitor);
 }

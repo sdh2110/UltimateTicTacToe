@@ -1,6 +1,7 @@
 package Model.Board;
 
 import Controller.GameMoves.MoveData;
+import Model.BoardVisitor;
 
 /**
  * Represents a board for a nonspecific Tic-Tac-Toe game.
@@ -21,6 +22,16 @@ public abstract class GameBoard implements BoardComponent {
     @Override
     public boolean attemptMove(MoveData move) {
         return spaces[move.getXCoordinate()][move.getYCoordinate()].attemptMove(move.getNextData());
+    }
+
+    /**
+     * Accepts a visit from a BoardVisitor.
+     * 
+     * @param visitor - The visitor that is visiting this component
+     */
+    @Override
+    public void acceptVisitor(BoardVisitor visitor) {
+        visitor.visit(this);
     }
 
     /**

@@ -1,6 +1,7 @@
 package Model.Board;
 
 import Controller.GameMoves.MoveData;
+import Model.BoardVisitor;
 
 /**
  * An interface for spaces on a GameBoard.
@@ -8,6 +9,7 @@ import Controller.GameMoves.MoveData;
  * @author Steven Hulbert
  */
 public class Space implements BoardComponent {
+
     // A Space object used for the createNewComponent factory method
     public static final Space FOR_FACTORY = new Space();
 
@@ -35,12 +37,21 @@ public class Space implements BoardComponent {
      * @return whether or not the move was a valid move
      */
     @Override
-	public boolean attemptMove(MoveData move) {
-        if (occupant != PieceType.EMPTY ||
-            move.getPlacementType() == PieceType.EMPTY) {
-                return false;
+    public boolean attemptMove(MoveData move) {
+        if (occupant != PieceType.EMPTY || move.getPlacementType() == PieceType.EMPTY) {
+            return false;
         }
         occupant = move.getPlacementType();
-		return true;
+        return true;
+    }
+
+    /**
+     * Accepts a visit from a BoardVisitor.
+     * 
+     * @param visitor - The visitor that is visiting this component
+     */
+    @Override
+    public void acceptVisitor(BoardVisitor visitor) {
+        visitor.visit(this);
     }
 }
