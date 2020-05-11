@@ -28,17 +28,7 @@ public class PieceData implements MoveData {
      * @return -1
      */
     @Override
-    public int getXCoordinate() {
-        return -1;
-    }
-
-    /**
-     * Not utilized for this data packet so always returns -1.
-     * 
-     * @return -1
-     */
-    @Override
-    public int getYCoordinate() {
+    public int getLocation() {
         return -1;
     }
 

@@ -10,18 +10,11 @@ import Model.Board.PieceType;
 public interface MoveData {
 
     /**
-     * Gets the x-coordinate at which this move is being attempted.
+     * Gets the location of the move.
      * 
-     * @return the x-coordinate
+     * @return the move location
      */
-    public int getXCoordinate();
-
-    /**
-     * Gets the y-coordinate at which this move is being attempted.
-     * 
-     * @return the t-coordinate
-     */
-    public int getYCoordinate();
+    public int getLocation();
     
     /**
      * Gets the type of piece to place with this move.

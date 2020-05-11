@@ -2,6 +2,7 @@ package Model.Board;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import Controller.GameMoves.MoveData;
 
@@ -13,7 +14,7 @@ import Controller.GameMoves.MoveData;
 public abstract class GameBoard implements BoardComponent {
     
     // The spaces that make up the board
-    private BoardComponent[][] spaces;
+    private List<BoardComponent> spaces;
 
     /**
      * Attempts the given move on this board.
@@ -23,7 +24,7 @@ public abstract class GameBoard implements BoardComponent {
      */
     @Override
     public boolean attemptMove(MoveData move) {
-        return spaces[move.getXCoordinate()][move.getYCoordinate()].attemptMove(move.getNextData());
+        return spaces.get(move.getLocation()).attemptMove(move.getNextData());
     }
 
     /**
@@ -31,14 +32,12 @@ public abstract class GameBoard implements BoardComponent {
      * 
      * @param componentType - The type of component to fill this board with
      * @param width - The width of the board to be created
-     * @param height - The heigt of the board to be created
      */
-    protected void initializeBoard(BoardComponent componentType, int width, int height) {
-        spaces = new BoardComponent[width][height];
-        for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                spaces[i][j] = componentType.createNewComponent();
-            }
+    protected void initializeBoard(BoardComponent componentType, int width) {
+        int componentCount = width * width;
+        spaces = new ArrayList<>(componentCount);
+        for (int i = 0; i < componentCount; i++) {
+            spaces.add(componentType.createNewComponent());
         }
     }
 
@@ -49,12 +48,6 @@ public abstract class GameBoard implements BoardComponent {
      * @return an iterator for the board
      */
     public Iterator<BoardComponent> getComponentIterator() {
-        ArrayList<BoardComponent> components = new ArrayList<>();
-        for (int y = 0; y < spaces.length; y++) {
-            for (int x = 0; x < spaces.length; x++) {
-                components.add(spaces[x][y]);
-            }
-        }
-        return components.iterator();
+        return spaces.iterator();
     }
 }

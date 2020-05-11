@@ -11,14 +11,12 @@ public class TicTacToeBoard extends GameBoard {
 
     // The standard width for a Tic-Tac-Toe board
     private static final int TTT_WIDTH = 3;
-    // The standard height for a Tic-Tac-Toe board
-    private static final int TTT_HEIGHT = 3;
 
     /**
      * Creates a new TicTacToeBoard as a 3x3 grid of empty spaces.
      */
     public TicTacToeBoard() {
-        initializeBoard(Space.FOR_FACTORY, TTT_WIDTH, TTT_HEIGHT);
+        initializeBoard(Space.FOR_FACTORY, TTT_WIDTH);
     }
 
     /**
