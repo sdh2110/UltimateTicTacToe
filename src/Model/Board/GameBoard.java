@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import Controller.GameManagement.ManagedComponent;
 import Controller.GameMoves.MoveData;
 
 /**
@@ -11,7 +12,7 @@ import Controller.GameMoves.MoveData;
  * 
  * @author Steven Hulbert
  */
-public abstract class GameBoard implements BoardComponent {
+public abstract class GameBoard extends ManagedComponent implements BoardComponent {
     
     // The spaces that make up the board
     private List<BoardComponent> spaces;

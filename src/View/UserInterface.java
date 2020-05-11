@@ -1,5 +1,6 @@
 package View;
 
+import Controller.GameManagement.ManagedComponent;
 import Model.Board.GameBoard;
 
 /**
@@ -7,7 +8,7 @@ import Model.Board.GameBoard;
  * 
  * @author Steven Hulbert
  */
-public abstract class UserInterface {
+public abstract class UserInterface extends ManagedComponent {
 
     // The board that this UI will display
     private GameBoard subjectBoard;
