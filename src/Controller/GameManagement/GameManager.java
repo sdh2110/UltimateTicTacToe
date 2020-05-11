@@ -46,6 +46,7 @@ public class GameManager {
      */
     public void beginGame() {
         ui.initialize();
+        playManager.runGame();
     }
 
     /**

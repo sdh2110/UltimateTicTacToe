@@ -15,7 +15,7 @@ public class PlayManager extends ManagedComponent {
     /**
      * Runs the game of Tic-Tac-Toe
      */
-    private void runGame() {
+    public void runGame() {
         while (true) {
             processNextTurn();
             endTurn();
