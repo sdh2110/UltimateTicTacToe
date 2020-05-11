@@ -1,6 +1,7 @@
 package Controller.GameManagement;
 
 import Controller.PlayManager;
+import Controller.GameMoves.MoveData;
 import Model.BoardVisitor;
 import Model.Board.GameBoard;
 import View.UserInterface;
@@ -74,5 +75,26 @@ public class GameManager {
      */
     public void sendVisitorToBoard(BoardVisitor visitor) {
         board.acceptVisitor(visitor);
+    }
+
+    /**
+     * Requests a player (either 1 or 2) to make a move. Gets the desired move
+     * from that player and returns the requested move.
+     * 
+     * @param playerNumber - The player number to request a move from
+     * @return the move made by the player
+     */
+    public MoveData requestMoveFromPlayer(int playerNumber) {
+        return null; //TODO
+    }
+    
+    /**
+     * Attempts the given move on the game's board.
+     * 
+     * @param move - The information for the move that is being attempted
+     * @return whether or not the move was a valid move
+     */
+    public boolean attemptMove(MoveData move) {
+        return board.attemptMove(move);
     }
 }
