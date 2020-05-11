@@ -19,7 +19,7 @@ public class TicTacToe {
     public static void main(String[] args) {
         GameBoard gameBoard = new TicTacToeBoard();
         UserInterface userInterface = new PTUI();
-        GameManager manager = new GameManager(gameBoard, userInterface);
+        GameManager manager = new GameManager("Tic-Tac-Toe", gameBoard, userInterface);
         manager.beginGame();
     }
 }

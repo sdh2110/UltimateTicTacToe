@@ -11,22 +11,29 @@ import View.UserInterface;
  */
 public class GameManager {
 
+    // The name of this game
+    private String name;
+
     // The board for this game
     private GameBoard board;
-
     // The user interface for this game
     private UserInterface ui;
 
     /**
      * Creates a new GameManager, managing the specified components.
      * 
+     * @param gameName - The name of this game
      * @param gameBoard - The board for this game
      * @param userInterface - The UI to display this game
      */
-    public GameManager(GameBoard gameBoard, UserInterface userInterface) {
+    public GameManager(String gameName, GameBoard gameBoard, UserInterface userInterface) {
+        name = gameName;
         board = gameBoard;
         ui = userInterface;
         ui.attachBoard(board);
+
+        takeManagmentOf(board);
+        takeManagmentOf(ui);
     }
 
     /**
@@ -34,5 +41,23 @@ public class GameManager {
      */
     public void beginGame() {
         ui.initialize();
+    }
+
+    /**
+     * Assigns this GameManager to be the manager of a certain component.
+     * 
+     * @param component - The component to manage
+     */
+    private void takeManagmentOf(ManagedComponent component) {
+        component.assignManager(this);
+    }
+
+    /**
+     * Gets the name of this game.
+     * 
+     * @return the name of this game
+     */
+    public String getNameOfGame() {
+        return name;
     }
 }
