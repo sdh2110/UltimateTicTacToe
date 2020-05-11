@@ -27,7 +27,7 @@ public class PTUI extends UserInterface {
     @Override
     public void update() {
         BuildPTVisitor buildPTBoard = new BuildPTVisitor();
-        getSubject().acceptVisitor(buildPTBoard);
+        getManager().sendVisitorToBoard(buildPTBoard);
         String ptBoard = buildPTBoard.getBoardString();
 
         System.out.println(CLEAR);

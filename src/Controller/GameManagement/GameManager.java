@@ -1,5 +1,6 @@
 package Controller.GameManagement;
 
+import Model.BoardVisitor;
 import Model.Board.GameBoard;
 import View.UserInterface;
 
@@ -30,7 +31,6 @@ public class GameManager {
         name = gameName;
         board = gameBoard;
         ui = userInterface;
-        ui.attachBoard(board);
 
         takeManagmentOf(board);
         takeManagmentOf(ui);
@@ -59,5 +59,14 @@ public class GameManager {
      */
     public String getNameOfGame() {
         return name;
+    }
+
+    /**
+     * Has a visitor visit the board to complete its processing.
+     * 
+     * @param visitor - The visitor to send
+     */
+    public void sendVisitorToBoard(BoardVisitor visitor) {
+        board.acceptVisitor(visitor);
     }
 }
