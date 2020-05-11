@@ -1,6 +1,11 @@
 package Controller.Players;
 
+import java.util.List;
+
+import Controller.GameMoves.LocationData;
 import Controller.GameMoves.MoveData;
+import Controller.GameMoves.PieceData;
+import Model.Board.PieceType;
 
 /**
  * A human player. Requests for information are always fulfilled through the
@@ -11,15 +16,36 @@ import Controller.GameMoves.MoveData;
 public class HumanPlayer extends Player {
 
     /**
+     * Creates a new human player.
+     * 
+     * @param playerPieceType - The piece this player places
+     */
+    public HumanPlayer(PieceType playerPieceType) {
+        initializePlayer(playerPieceType);
+    }
+
+    /**
      * Has the player fill the given move request, modifying it to contain the
      * data of the move the player wants to attempt.
      * 
-     * @param request - The format of the move the player should create
+     * @param requestParams - The format of the move the player should create
+     * @return the move to attempt
      */
-    @Override
-    public void fulfillMoveRequest(MoveData request) {
-        // TODO Auto-generated method stub
+    public MoveData fulfillMoveRequest(List<Integer> requestParams) {
+        MoveData move = new PieceData(getPieceToPlace());
 
+        for (Integer requestComponent : requestParams) {
+            int location = 0;
+            if (requestComponent == TO_BE_FILLED) {
+                location = getManager().reqLocationFromUI();
+            }
+            else {
+                location = requestComponent;
+            }
+            move = new LocationData(location, move);
+        }
+
+        return move;
     }
     
 }

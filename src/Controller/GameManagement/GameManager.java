@@ -95,9 +95,9 @@ public class GameManager {
      * @return the move made by the player
      */
     public MoveData requestMoveFromPlayer(int playerNumber) {
-        MoveData request = new LocationData(2, new PieceData(PieceType.X_PIECE));
-        getPlayer(playerNumber).fulfillMoveRequest(request);
-        return request;
+        List<Integer> request = new ArrayList<>();
+        request.add(Player.TO_BE_FILLED);
+        return getPlayer(playerNumber).fulfillMoveRequest(request);
     }
     
     /**
@@ -119,6 +119,7 @@ public class GameManager {
     public void addPlayer(Player player) {
         if (players.size() < 2) {
             players.add(player);
+            takeManagmentOf(player);
         }
     }
 
@@ -130,5 +131,15 @@ public class GameManager {
      */
     private Player getPlayer(int playerNum) {
         return players.get(playerNum - 1);
+    }
+
+    /**
+     * Has the UI request input from the user to enter a location at which they
+     * want to make a move.
+     * 
+     * @return - A number between 0-8
+     */
+    public int reqLocationFromUI() {
+        return ui.requestLocationInput();
     }
 }

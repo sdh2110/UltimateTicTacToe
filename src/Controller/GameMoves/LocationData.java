@@ -20,6 +20,16 @@ public class LocationData implements MoveData {
     /**
      * Creates a new LocationData with given location and next data.
      * 
+     * @param nextData - The next packet of data that makes up this move
+     */
+    public LocationData(MoveData nextData) {
+        this.location = OPEN_REQUEST;
+        this.nextData = nextData;
+    }
+
+    /**
+     * Creates a new LocationData with given location and next data.
+     * 
      * @param location - The location of the move being made
      * @param nextData - The next packet of data that makes up this move
      */

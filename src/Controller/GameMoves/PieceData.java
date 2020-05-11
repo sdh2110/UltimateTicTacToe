@@ -23,13 +23,13 @@ public class PieceData implements MoveData {
     }
 
     /**
-     * Not utilized for this data packet so always returns -1.
+     * Not utilized for this data packet so always returns NONEXISTANT_ATR.
      * 
-     * @return -1
+     * @return NONEXISTANT_ATR
      */
     @Override
     public int getLocation() {
-        return -1;
+        return NONEXISTANT_ATR;
     }
 
     /**

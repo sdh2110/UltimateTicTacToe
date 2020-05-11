@@ -9,6 +9,9 @@ import Model.Board.PieceType;
  */
 public interface MoveData {
 
+    public static final int OPEN_REQUEST = -1;
+    public static final int NONEXISTANT_ATR = -2;
+
     /**
      * Gets the location of the move.
      * 
