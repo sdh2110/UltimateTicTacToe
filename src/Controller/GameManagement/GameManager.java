@@ -33,6 +33,6 @@ public class GameManager {
      * Starts the game that this manager is managing.
      */
     public void beginGame() {
-        ui.update();
+        ui.initialize();
     }
 }

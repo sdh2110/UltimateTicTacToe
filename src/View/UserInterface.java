@@ -34,4 +34,9 @@ public abstract class UserInterface {
      * Updates the user interface.
      */
     public abstract void update();
+
+    /**
+     * Initializes this user interface.
+     */
+    public abstract void initialize();
 }
