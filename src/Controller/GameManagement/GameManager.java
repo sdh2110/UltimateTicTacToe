@@ -41,7 +41,6 @@ public class GameManager {
      */
     public void beginGame() {
         ui.initialize();
-        System.out.println(ui.requestLocationInput());
     }
 
     /**
