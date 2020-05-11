@@ -18,4 +18,12 @@ public abstract class UserInterface extends ManagedComponent {
      * Initializes this user interface.
      */
     public abstract void initialize();
+
+    /**
+     * Has the UI request input from the user to enter a location at which they
+     * want to make a move.
+     * 
+     * @return - A number between 0-8
+     */
+    public abstract int requestLocationInput();
 }
