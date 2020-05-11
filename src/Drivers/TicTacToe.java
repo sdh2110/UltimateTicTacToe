@@ -1,5 +1,6 @@
 package Drivers;
 
+import Controller.PlayManager;
 import Controller.GameManagement.GameManager;
 import Model.Board.GameBoard;
 import Model.Board.TicTacToeBoard;
@@ -19,7 +20,8 @@ public class TicTacToe {
     public static void main(String[] args) {
         GameBoard gameBoard = new TicTacToeBoard();
         UserInterface userInterface = new PTUI();
-        GameManager manager = new GameManager("Tic-Tac-Toe", gameBoard, userInterface);
+        PlayManager playManager = new PlayManager();
+        GameManager manager = new GameManager("Tic-Tac-Toe", gameBoard, userInterface, playManager);
         manager.beginGame();
     }
 }

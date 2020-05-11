@@ -1,5 +1,6 @@
 package Controller.GameManagement;
 
+import Controller.PlayManager;
 import Model.BoardVisitor;
 import Model.Board.GameBoard;
 import View.UserInterface;
@@ -19,6 +20,8 @@ public class GameManager {
     private GameBoard board;
     // The user interface for this game
     private UserInterface ui;
+    // The play manager for this game
+    private PlayManager playManager;
 
     /**
      * Creates a new GameManager, managing the specified components.
@@ -27,13 +30,15 @@ public class GameManager {
      * @param gameBoard - The board for this game
      * @param userInterface - The UI to display this game
      */
-    public GameManager(String gameName, GameBoard gameBoard, UserInterface userInterface) {
+    public GameManager(String gameName, GameBoard gameBoard, UserInterface userInterface, PlayManager playManager) {
         name = gameName;
         board = gameBoard;
         ui = userInterface;
+        this.playManager = playManager;
 
         takeManagmentOf(board);
         takeManagmentOf(ui);
+        takeManagmentOf(playManager);
     }
 
     /**
