@@ -107,7 +107,11 @@ public class GameManager {
      * @return whether or not the move was a valid move
      */
     public boolean attemptMove(MoveData move) {
-        return board.attemptMove(move);
+        boolean result = board.attemptMove(move);
+        if (result) {
+            modelModified();
+        }
+        return result;
     }
 
     /**
@@ -141,5 +145,12 @@ public class GameManager {
      */
     public int reqLocationFromUI() {
         return ui.requestLocationInput();
+    }
+
+    /**
+     * Called by the model whenever its state is modified.
+     */
+    public void modelModified() {
+        ui.update();
     }
 }
