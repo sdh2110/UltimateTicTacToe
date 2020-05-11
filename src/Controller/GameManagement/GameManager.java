@@ -1,9 +1,16 @@
 package Controller.GameManagement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Controller.PlayManager;
+import Controller.GameMoves.LocationData;
 import Controller.GameMoves.MoveData;
+import Controller.GameMoves.PieceData;
+import Controller.Players.Player;
 import Model.BoardVisitor;
 import Model.Board.GameBoard;
+import Model.Board.PieceType;
 import View.UserInterface;
 
 /**
@@ -23,6 +30,8 @@ public class GameManager {
     private UserInterface ui;
     // The play manager for this game
     private PlayManager playManager;
+    // The players in this game
+    private List<Player> players;
 
     /**
      * Creates a new GameManager, managing the specified components.
@@ -36,6 +45,7 @@ public class GameManager {
         board = gameBoard;
         ui = userInterface;
         this.playManager = playManager;
+        players = new ArrayList<>(2);
 
         takeManagmentOf(board);
         takeManagmentOf(ui);
@@ -85,7 +95,9 @@ public class GameManager {
      * @return the move made by the player
      */
     public MoveData requestMoveFromPlayer(int playerNumber) {
-        return null; //TODO
+        MoveData request = new LocationData(2, new PieceData(PieceType.X_PIECE));
+        getPlayer(playerNumber).fulfillMoveRequest(request);
+        return request;
     }
     
     /**
@@ -96,5 +108,27 @@ public class GameManager {
      */
     public boolean attemptMove(MoveData move) {
         return board.attemptMove(move);
+    }
+
+    /**
+     * Adds another player to this game if both players in this game have not
+     * been added yet.
+     * 
+     * @param player - The player being added
+     */
+    public void addPlayer(Player player) {
+        if (players.size() < 2) {
+            players.add(player);
+        }
+    }
+
+    /**
+     * Gets the player requested, either player 1 or 2.
+     * 
+     * @param playerNum - The player number being requested
+     * @return the requested player
+     */
+    private Player getPlayer(int playerNum) {
+        return players.get(playerNum - 1);
     }
 }
