@@ -4,13 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Controller.PlayManager;
-import Controller.GameMoves.LocationData;
 import Controller.GameMoves.MoveData;
-import Controller.GameMoves.PieceData;
 import Controller.Players.Player;
 import Model.BoardVisitor;
 import Model.Board.GameBoard;
-import Model.Board.PieceType;
 import View.UserInterface;
 
 /**
