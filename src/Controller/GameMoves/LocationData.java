@@ -1,6 +1,6 @@
 package Controller.GameMoves;
 
-import Model.Board.PieceType;
+import Model.Board.Space;
 
 /**
  * A data packet that represents the location of the move being made. It wraps
@@ -44,8 +44,8 @@ public class LocationData implements MoveData {
      * @return PieceType.EMPTY
      */
     @Override
-    public PieceType getPlacementType() {
-        return PieceType.EMPTY;
+    public char getPlacementType() {
+        return Space.EMPTY;
     }
 
     /**

@@ -5,7 +5,6 @@ import java.util.List;
 import Controller.GameMoves.LocationData;
 import Controller.GameMoves.MoveData;
 import Controller.GameMoves.PieceData;
-import Model.Board.PieceType;
 
 /**
  * A human player. Requests for information are always fulfilled through the
@@ -20,7 +19,7 @@ public class HumanPlayer extends Player {
      * 
      * @param playerPieceType - The piece this player places
      */
-    public HumanPlayer(PieceType playerPieceType) {
+    public HumanPlayer(char playerPieceType) {
         initializePlayer(playerPieceType);
     }
 

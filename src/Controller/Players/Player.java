@@ -4,7 +4,6 @@ import java.util.List;
 
 import Controller.GameManagement.ManagedComponent;
 import Controller.GameMoves.MoveData;
-import Model.Board.PieceType;
 
 /**
  * A system that controls a player in the Tic-Tac-Toe game.
@@ -17,7 +16,7 @@ public abstract class Player extends ManagedComponent {
     public static final int TO_BE_FILLED = -1;
 
     // The piece this player places
-    private PieceType playerPiece;
+    private char playerPiece;
     
     /**
      * Has the player fill the given move request, modifying it to contain the
@@ -33,7 +32,7 @@ public abstract class Player extends ManagedComponent {
      * 
      * @return the piece type
      */
-    protected PieceType getPieceToPlace() {
+    protected char getPieceToPlace() {
         return playerPiece;
     }
 
@@ -42,7 +41,7 @@ public abstract class Player extends ManagedComponent {
      * 
      * @param playerPieceType - The piece this player places
      */
-    protected void initializePlayer(PieceType playerPieceType) {
+    protected void initializePlayer(char playerPieceType) {
         playerPiece = playerPieceType;
     }
 

@@ -5,7 +5,7 @@ import Controller.GameManagement.GameManager;
 import Controller.Players.HumanPlayer;
 import Controller.Players.Player;
 import Model.Board.GameBoard;
-import Model.Board.PieceType;
+import Model.Board.Space;
 import Model.Board.TicTacToeBoard;
 import View.PTUI;
 import View.UserInterface;
@@ -27,8 +27,8 @@ public class TicTacToe {
 
         GameManager manager = new GameManager("Tic-Tac-Toe", gameBoard, userInterface, playManager);
 
-        Player player1 = new HumanPlayer(PieceType.X_PIECE);
-        Player player2 = new HumanPlayer(PieceType.O_PIECE);
+        Player player1 = new HumanPlayer(Space.X_PIECE);
+        Player player2 = new HumanPlayer(Space.O_PIECE);
         manager.addPlayer(player1);
         manager.addPlayer(player2);
         

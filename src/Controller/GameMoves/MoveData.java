@@ -1,7 +1,5 @@
 package Controller.GameMoves;
 
-import Model.Board.PieceType;
-
 /**
  * A packet containing the information for a move made in a Tic-Tac-Toe game.
  * 
@@ -24,7 +22,7 @@ public interface MoveData {
      * 
      * @return the piece type
      */
-    public PieceType getPlacementType();
+    public char getPlacementType();
 
     /**
      * Get the inner bit of data stored in this GameMove containing the next

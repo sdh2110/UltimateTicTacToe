@@ -14,11 +14,6 @@ import Model.Board.TicTacToeBoard;
  */
 public class BuildPTVisitor implements BoardVisitor {
 
-    // Char representation of board spaces
-    private static final char EMPTY_C = '.';
-    private static final char X_PIECE_C = 'X';
-    private static final char O_PIECE_C = 'O';
-
     // The string representation of a board that is being built
     private StringBuilder boardString;
 
@@ -36,16 +31,7 @@ public class BuildPTVisitor implements BoardVisitor {
      */
     @Override
     public void visit(Space space) {
-        switch (space.getOccupant()) {
-            case EMPTY:
-            boardString.append(EMPTY_C);
-            break;
-            case X_PIECE:
-            boardString.append(X_PIECE_C);
-            break;
-            case O_PIECE:
-            boardString.append(O_PIECE_C);
-        }
+        boardString.append(space.getOccupant());
     }
 
     /**

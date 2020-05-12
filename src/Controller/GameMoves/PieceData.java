@@ -1,7 +1,5 @@
 package Controller.GameMoves;
 
-import Model.Board.PieceType;
-
 /**
  * A data packet that specifies the type of piece to be placed with this move.
  * 
@@ -10,7 +8,7 @@ import Model.Board.PieceType;
 public class PieceData implements MoveData {
 
     //The type of piece to be placed with this move
-    private PieceType placement;
+    private char placement;
 
     /**
      * Creates a new PieceData that describes a move placing a certain kind of
@@ -18,7 +16,7 @@ public class PieceData implements MoveData {
      * 
      * @param placementType - The type of piece to be placed with this move
      */
-    public PieceData(PieceType placementType) {
+    public PieceData(char placementType) {
         placement = placementType;
     }
 
@@ -38,7 +36,7 @@ public class PieceData implements MoveData {
      * @return the piece type
      */
     @Override
-    public PieceType getPlacementType() {
+    public char getPlacementType() {
         return placement;
     }
 

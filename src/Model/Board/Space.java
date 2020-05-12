@@ -10,14 +10,19 @@ import Model.BoardVisitor;
  */
 public class Space implements BoardComponent {
 
+    // Char representation of board spaces
+    public static final char EMPTY = '.';
+    public static final char X_PIECE = 'X';
+    public static final char O_PIECE = 'O';
+
     // A Space object used for the createNewComponent factory method
     public static final Space FOR_FACTORY = new Space();
 
     // The occupant off this space
-    private PieceType occupant;
+    private char occupant;
 
     public Space() {
-        occupant = PieceType.EMPTY;
+        occupant = EMPTY;
     }
 
     /**
@@ -38,7 +43,7 @@ public class Space implements BoardComponent {
      */
     @Override
     public boolean attemptMove(MoveData move) {
-        if (occupant != PieceType.EMPTY || move.getPlacementType() == PieceType.EMPTY) {
+        if (occupant != EMPTY || move.getPlacementType() == EMPTY) {
             return false;
         }
         occupant = move.getPlacementType();
@@ -60,7 +65,7 @@ public class Space implements BoardComponent {
      * 
      * @return the occupant
      */
-    public PieceType getOccupant() {
+    public char getOccupant() {
         return occupant;
     }
 }
