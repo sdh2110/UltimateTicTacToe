@@ -111,7 +111,7 @@ public class WinProcessor {
         Iterator<BoardComponent> iterator = pairedBoard.getComponentIterator();
         StringBuilder builder = new StringBuilder();
 
-        int i = 0;
+        int i = 1;
         while (iterator.hasNext()) {
             builder.append(iterator.next().getOccupant());
             if (i % boardWidth == 0) {
