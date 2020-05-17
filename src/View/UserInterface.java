@@ -26,4 +26,9 @@ public abstract class UserInterface extends ManagedComponent {
      * @return - A number between 0-8
      */
     public abstract int requestLocationInput();
+
+    /**
+     * Displays a message for the end of the game detailing the winner.
+     */
+    public abstract void displayEndGameMessage();
 }

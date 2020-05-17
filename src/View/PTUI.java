@@ -33,6 +33,10 @@ public class PTUI extends UserInterface {
     private static final String INVALID_INPT_MSG =
     "That was an invalid input, please enter a valid input: ";
 
+    // The message to print when the game ends
+    private static final String END_GAME_MESSAGE =
+    "\n%s wins!\n";
+
     // ----------------------- PROCESSING CONSTANTS ------------------------ //
 
     // The REGEX for filtering location input
@@ -111,6 +115,14 @@ public class PTUI extends UserInterface {
      */
     private int inputToRequestFormat(int rawInputNum) {
         return conversion[rawInputNum];
+    }
+
+    /**
+     * Displays a message for the end of the game detailing the winner.
+     */
+    @Override
+    public void displayEndGameMessage() {
+        System.out.printf(END_GAME_MESSAGE, String.valueOf(getManager().getWinner()));
     }
     
 }

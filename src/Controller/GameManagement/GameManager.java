@@ -165,6 +165,6 @@ public class GameManager {
      * the game.
      */
     public void endGame() {
-        // TODO
+        ui.displayEndGameMessage();
     }
 }
