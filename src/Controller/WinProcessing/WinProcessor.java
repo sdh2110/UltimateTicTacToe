@@ -37,7 +37,8 @@ public class WinProcessor {
     }
 
     /**
-     * Creates a new WinProcessor with the given winningSetups.
+     * Creates a new WinProcessor with the given winningSetups. This
+     * constructor is only used in the createRepairedCopy() method.
      * 
      * @param pairedBoard - The board this WinProcessor is paired with
      * @param winningSetups - The valid winning setups for this processor to check
@@ -46,6 +47,19 @@ public class WinProcessor {
     private WinProcessor(GameBoard pairedBoard, List<WinningSetup> winningSetups, int boardWidth) {
         this.pairedBoard = pairedBoard;
         this.winningSetups = winningSetups;
+        this.boardWidth = boardWidth;
+    }
+
+    /**
+     * Creates a new WinProcessor that is not paired to any board. This
+     * constructor is used for creating model processors to be given to boards
+     * to create their own processors.
+     * 
+     * @param boardWidth - The width of the board that this processor is made
+     *                     to be paired with
+     */
+    public WinProcessor(int boardWidth) {
+        winningSetups = new ArrayList<>();
         this.boardWidth = boardWidth;
     }
 

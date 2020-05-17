@@ -8,7 +8,7 @@ package Controller.WinProcessing;
 public class WinningSetup {
 
     // The char for an ambiguous player
-    public static final char AMBIGUOUS_PLAYER = '*';
+    public static final char AMBIGUOUS_PLAYER = 'A';
     
     // The regex defining this winning setup
     private String setupRegex;

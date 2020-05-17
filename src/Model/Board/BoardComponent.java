@@ -1,6 +1,7 @@
 package Model.Board;
 
 import Controller.GameMoves.MoveData;
+import Controller.WinProcessing.WinProcessor;
 import Model.BoardVisitor;
 
 /**
@@ -41,4 +42,11 @@ public interface BoardComponent {
      * @return the piece type char of this component
      */
     public char getOccupant();
+
+    /**
+     * Sets the win processor for this component.
+     * 
+     * @param winProcessor - The win processor to set it as
+     */
+    public void setWinProccesor(WinProcessor winProcessor);
 }

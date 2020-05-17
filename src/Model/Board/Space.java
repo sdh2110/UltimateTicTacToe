@@ -1,6 +1,7 @@
 package Model.Board;
 
 import Controller.GameMoves.MoveData;
+import Controller.WinProcessing.WinProcessor;
 import Model.BoardVisitor;
 
 /**
@@ -69,4 +70,13 @@ public class Space implements BoardComponent {
     public char getOccupant() {
         return occupant;
     }
+
+    /**
+     * Does nothing because Spaces do not need a win processor.
+     */
+    @Override
+    public void setWinProccesor(WinProcessor winProcessor) {
+        // Spaces do not need a win processor
+    }
+
 }
