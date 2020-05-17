@@ -2,6 +2,7 @@ package Controller;
 
 import Controller.GameManagement.ManagedComponent;
 import Controller.GameMoves.MoveData;
+import Model.Board.Space;
 
 /**
  * Manages the play of a Tic-Tac-Toe game. Runs the turns.
@@ -19,6 +20,10 @@ public class PlayManager extends ManagedComponent {
     public void runGame() {
         while (true) {
             processNextTurn();
+            if (gameIsOver()) {
+                getManager().endGame();
+                break;
+            }
             endTurn();
         }
     }
@@ -47,6 +52,15 @@ public class PlayManager extends ManagedComponent {
      */
     public int getCurrentPlayerTurn() {
         return isPlayerOneTurn ? 1 : 2;
+    }
+
+    /**
+     * Checks if the game is over.
+     * 
+     * @return true if the game is over
+     */
+    private boolean gameIsOver() {
+        return getManager().getWinner() != Space.EMPTY;
     }
 
 }

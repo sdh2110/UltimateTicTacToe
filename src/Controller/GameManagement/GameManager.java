@@ -150,4 +150,21 @@ public class GameManager {
     public void modelModified() {
         ui.update();
     }
+
+    /**
+     * Gets the char representing the winner of this game.
+     * 
+     * @return the winner if there is one, otherwise return empty space char
+     */
+    public char getWinner() {
+        return board.getOccupant();
+    }
+
+    /**
+     * Signaled when the game as ended. Finishes up any final processing for
+     * the game.
+     */
+    public void endGame() {
+        // TODO
+    }
 }

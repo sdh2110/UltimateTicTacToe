@@ -34,6 +34,7 @@ public class WinProcessor {
         this.pairedBoard = pairedBoard;
         winningSetups = new ArrayList<>();
         boardWidth = pairedBoard.getWidth();
+        winner = Space.EMPTY;
     }
 
     /**
@@ -48,6 +49,7 @@ public class WinProcessor {
         this.pairedBoard = pairedBoard;
         this.winningSetups = winningSetups;
         this.boardWidth = boardWidth;
+        winner = Space.EMPTY;
     }
 
     /**
@@ -61,6 +63,7 @@ public class WinProcessor {
     public WinProcessor(int boardWidth) {
         winningSetups = new ArrayList<>();
         this.boardWidth = boardWidth;
+        winner = Space.EMPTY;
     }
 
     /**
