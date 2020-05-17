@@ -34,4 +34,11 @@ public interface BoardComponent {
      * @param visitor - The visitor that is visiting this component
      */
     public void acceptVisitor(BoardVisitor visitor);
+
+    /**
+     * Gets the occupying piece for this component
+     * 
+     * @return the piece type char of this component
+     */
+    public char getOccupant();
 }

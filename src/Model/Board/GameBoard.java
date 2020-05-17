@@ -51,4 +51,23 @@ public abstract class GameBoard extends ManagedComponent implements BoardCompone
     public Iterator<BoardComponent> getComponentIterator() {
         return spaces.iterator();
     }
+
+    /**
+     * Gets the occupying player piece for this board, in other words, the
+     * player that is winning this board.
+     * 
+     * @return the piece type char of this component
+     */
+    public char getOccupant() {
+        return ' '; //TODO
+    }
+
+    /**
+     * Gets the width of this board.
+     * 
+     * @return the width
+     */
+    public int getWidth() {
+        return (int)Math.sqrt(spaces.size());
+    }
 }

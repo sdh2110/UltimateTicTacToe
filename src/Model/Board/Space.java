@@ -65,6 +65,7 @@ public class Space implements BoardComponent {
      * 
      * @return the occupant
      */
+    @Override
     public char getOccupant() {
         return occupant;
     }
